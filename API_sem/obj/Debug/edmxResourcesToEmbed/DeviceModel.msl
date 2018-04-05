@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище Device_PropertyModelContainer" CdmEntityContainer="Device_PropertyEntities">
+    <EntitySetMapping Name="Laptop">
+      <EntityTypeMapping TypeName="Device_PropertyModel.Laptop">
+        <MappingFragment StoreEntitySet="Laptop">
+          <ScalarProperty Name="HDD_Drive" ColumnName="HDD_Drive" />
+          <ScalarProperty Name="HDD_Speed" ColumnName="HDD_Speed" />
+          <ScalarProperty Name="Other" ColumnName="Other" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="upc" ColumnName="upc" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+          <ScalarProperty Name="Interface" ColumnName="Interface" />
+          <ScalarProperty Name="VGA" ColumnName="VGA" />
+          <ScalarProperty Name="DvD" ColumnName="DvD" />
+          <ScalarProperty Name="HDMI" ColumnName="HDMI" />
+          <ScalarProperty Name="WebCam" ColumnName="WebCam" />
+          <ScalarProperty Name="Micro" ColumnName="Micro" />
+          <ScalarProperty Name="Bluetooth" ColumnName="Bluetooth" />
+          <ScalarProperty Name="CardReader" ColumnName="CardReader" />
+          <ScalarProperty Name="AudiOut" ColumnName="AudiOut" />
+          <ScalarProperty Name="Ethernet" ColumnName="Ethernet" />
+          <ScalarProperty Name="Optical_Drive_Type" ColumnName="Optical_Drive_Type" />
+          <ScalarProperty Name="Total_USB" ColumnName="Total_USB" />
+          <ScalarProperty Name="Bluetooth_Standard" ColumnName="Bluetooth_Standard" />
+          <ScalarProperty Name="WiFi_Standard" ColumnName="WiFi_Standard" />
+          <ScalarProperty Name="Wireless_Protocol" ColumnName="Wireless_Protocol" />
+          <ScalarProperty Name="Product_Color" ColumnName="Product_Color" />
+          <ScalarProperty Name="Product_Type" ColumnName="Product_Type" />
+          <ScalarProperty Name="Product_Line" ColumnName="Product_Line" />
+          <ScalarProperty Name="RAM_Value" ColumnName="RAM_Value" />
+          <ScalarProperty Name="RAM_Type" ColumnName="RAM_Type" />
+          <ScalarProperty Name="RAM_Speed" ColumnName="RAM_Speed" />
+          <ScalarProperty Name="HDD_Value" ColumnName="HDD_Value" />
+          <ScalarProperty Name="Processor" ColumnName="Processor" />
+          <ScalarProperty Name="Processor_Cache" ColumnName="Processor_Cache" />
+          <ScalarProperty Name="Processor_Speed" ColumnName="Processor_Speed" />
+          <ScalarProperty Name="Processor_MaxTurboSpeed" ColumnName="Processor_MaxTurboSpeed" />
+          <ScalarProperty Name="Processor_Manufacturer" ColumnName="Processor_Manufacturer" />
+          <ScalarProperty Name="Processor_Type" ColumnName="Processor_Type" />
+          <ScalarProperty Name="Processor_Chipset" ColumnName="Processor_Chipset" />
+          <ScalarProperty Name="Processor_Graphics" ColumnName="Processor_Graphics" />
+          <ScalarProperty Name="Screen_Size_inches" ColumnName="Screen_Size_inches" />
+          <ScalarProperty Name="Screen_Size_Metric" ColumnName="Screen_Size_Metric" />
+          <ScalarProperty Name="Screen_Relation" ColumnName="Screen_Relation" />
+          <ScalarProperty Name="Screen_Resolutions" ColumnName="Screen_Resolutions" />
+          <ScalarProperty Name="Screen_Type" ColumnName="Screen_Type" />
+          <ScalarProperty Name="Operating_System" ColumnName="Operating_System" />
+          <ScalarProperty Name="Battery_Energy" ColumnName="Battery_Energy" />
+          <ScalarProperty Name="Dimensions" ColumnName="Dimensions" />
+          <ScalarProperty Name="DescriptionEng" ColumnName="DescriptionEng" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewLaptop">
+      <EntityTypeMapping TypeName="Device_PropertyModel.NewLaptop">
+        <MappingFragment StoreEntitySet="NewLaptop">
+          <ScalarProperty Name="Other" ColumnName="Other" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="DescriptionEng" ColumnName="DescriptionEng" />
+          <ScalarProperty Name="Wireless_Type" ColumnName="Wireless_Type" />
+          <ScalarProperty Name="Operating_System" ColumnName="Operating_System" />
+          <ScalarProperty Name="Dimensions" ColumnName="Dimensions" />
+          <ScalarProperty Name="Battery_Energy" ColumnName="Battery_Energy" />
+          <ScalarProperty Name="HDD_Speed" ColumnName="HDD_Speed" />
+          <ScalarProperty Name="HDD_DriveInterface" ColumnName="HDD_DriveInterface" />
+          <ScalarProperty Name="HDD_Size" ColumnName="HDD_Size" />
+          <ScalarProperty Name="Screen_Type" ColumnName="Screen_Type" />
+          <ScalarProperty Name="Screen_Relation" ColumnName="Screen_Relation" />
+          <ScalarProperty Name="Screen_Size_Metric" ColumnName="Screen_Size_Metric" />
+          <ScalarProperty Name="Screen_Size_inches" ColumnName="Screen_Size_inches" />
+          <ScalarProperty Name="Screen_Resolutions" ColumnName="Screen_Resolutions" />
+          <ScalarProperty Name="Processor_Chipset" ColumnName="Processor_Chipset" />
+          <ScalarProperty Name="Processor_Manufacturer" ColumnName="Processor_Manufacturer" />
+          <ScalarProperty Name="Processor" ColumnName="Processor" />
+          <ScalarProperty Name="Processor_Graphics" ColumnName="Processor_Graphics" />
+          <ScalarProperty Name="Processor_Type" ColumnName="Processor_Type" />
+          <ScalarProperty Name="Processor_MaxTurboSpeed" ColumnName="Processor_MaxTurboSpeed" />
+          <ScalarProperty Name="Processor_Speed" ColumnName="Processor_Speed" />
+          <ScalarProperty Name="Processor_Cache" ColumnName="Processor_Cache" />
+          <ScalarProperty Name="RAM_Type" ColumnName="RAM_Type" />
+          <ScalarProperty Name="RAM_Speed" ColumnName="RAM_Speed" />
+          <ScalarProperty Name="RAM_Size" ColumnName="RAM_Size" />
+          <ScalarProperty Name="Product_Line" ColumnName="Product_Line" />
+          <ScalarProperty Name="Product_Type" ColumnName="Product_Type" />
+          <ScalarProperty Name="Product_Color" ColumnName="Product_Color" />
+          <ScalarProperty Name="WiFi_Standard" ColumnName="WiFi_Standard" />
+          <ScalarProperty Name="Bluetooth_Standard" ColumnName="Bluetooth_Standard" />
+          <ScalarProperty Name="Total_USB" ColumnName="Total_USB" />
+          <ScalarProperty Name="Optical_Drive_Type" ColumnName="Optical_Drive_Type" />
+          <ScalarProperty Name="Ethernet" ColumnName="Ethernet" />
+          <ScalarProperty Name="AudiOut" ColumnName="AudiOut" />
+          <ScalarProperty Name="CardReader" ColumnName="CardReader" />
+          <ScalarProperty Name="Bluetooth" ColumnName="Bluetooth" />
+          <ScalarProperty Name="Micro" ColumnName="Micro" />
+          <ScalarProperty Name="WebCam" ColumnName="WebCam" />
+          <ScalarProperty Name="HDMI" ColumnName="HDMI" />
+          <ScalarProperty Name="DvD" ColumnName="DvD" />
+          <ScalarProperty Name="VGA" ColumnName="VGA" />
+          <ScalarProperty Name="Interface" ColumnName="Interface" />
+          <ScalarProperty Name="Graphic" ColumnName="Graphic" />
+          <ScalarProperty Name="variation_id_Array" ColumnName="variation_id_Array" />
+          <ScalarProperty Name="variation_id" ColumnName="variation_id" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Physical_height" ColumnName="Physical_height" />
+          <ScalarProperty Name="Physical_length" ColumnName="Physical_length" />
+          <ScalarProperty Name="Physical_width" ColumnName="Physical_width" />
+          <ScalarProperty Name="Series" ColumnName="Series" />
+          <ScalarProperty Name="mpn" ColumnName="mpn" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+          <ScalarProperty Name="gtinsArray" ColumnName="gtinsArray" />
+          <ScalarProperty Name="ean" ColumnName="ean" />
+          <ScalarProperty Name="upc" ColumnName="upc" />
+          <ScalarProperty Name="sem3_id" ColumnName="sem3_id" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Laptops">
+      <EntityTypeMapping TypeName="Device_PropertyModel.Laptops">
+        <MappingFragment StoreEntitySet="Laptops">
+          <ScalarProperty Name="variation_id_Array" ColumnName="variation_id_Array" />
+          <ScalarProperty Name="variation_id" ColumnName="variation_id" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Physical_height" ColumnName="Physical_height" />
+          <ScalarProperty Name="Physical_length" ColumnName="Physical_length" />
+          <ScalarProperty Name="Physical_width" ColumnName="Physical_width" />
+          <ScalarProperty Name="Series" ColumnName="Series" />
+          <ScalarProperty Name="mpn" ColumnName="mpn" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+          <ScalarProperty Name="gtinsArray" ColumnName="gtinsArray" />
+          <ScalarProperty Name="ean" ColumnName="ean" />
+          <ScalarProperty Name="upc" ColumnName="upc" />
+          <ScalarProperty Name="sem3_id" ColumnName="sem3_id" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropertyType">
+      <EntityTypeMapping TypeName="Device_PropertyModel.PropertyType">
+        <MappingFragment StoreEntitySet="PropertyType">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropertyValue">
+      <EntityTypeMapping TypeName="Device_PropertyModel.PropertyValue">
+        <MappingFragment StoreEntitySet="PropertyValue">
+          <ScalarProperty Name="PTid" ColumnName="PTid" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropertyValueToLaptops">
+      <EntityTypeMapping TypeName="Device_PropertyModel.PropertyValueToLaptops">
+        <MappingFragment StoreEntitySet="PropertyValueToLaptops">
+          <ScalarProperty Name="PVId" ColumnName="PVId" />
+          <ScalarProperty Name="LapId" ColumnName="LapId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListSite">
+      <EntityTypeMapping TypeName="Device_PropertyModel.ListSite">
+        <MappingFragment StoreEntitySet="ListSite">
+          <ScalarProperty Name="LastDeviceId" ColumnName="LastDeviceId" />
+          <ScalarProperty Name="Error" ColumnName="Error" />
+          <ScalarProperty Name="TotalResult" ColumnName="TotalResult" />
+          <ScalarProperty Name="IsUsing" ColumnName="IsUsing" />
+          <ScalarProperty Name="site" ColumnName="site" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phones">
+      <EntityTypeMapping TypeName="Device_PropertyModel.Phones">
+        <MappingFragment StoreEntitySet="Phones">
+          <ScalarProperty Name="variation_id_Array" ColumnName="variation_id_Array" />
+          <ScalarProperty Name="variation_id" ColumnName="variation_id" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="Physical_height" ColumnName="Physical_height" />
+          <ScalarProperty Name="Physical_length" ColumnName="Physical_length" />
+          <ScalarProperty Name="Physical_width" ColumnName="Physical_width" />
+          <ScalarProperty Name="Series" ColumnName="Series" />
+          <ScalarProperty Name="mpn" ColumnName="mpn" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+          <ScalarProperty Name="gtinsArray" ColumnName="gtinsArray" />
+          <ScalarProperty Name="ean" ColumnName="ean" />
+          <ScalarProperty Name="upc" ColumnName="upc" />
+          <ScalarProperty Name="sem3_id" ColumnName="sem3_id" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropertyTypePhones">
+      <EntityTypeMapping TypeName="Device_PropertyModel.PropertyTypePhones">
+        <MappingFragment StoreEntitySet="PropertyTypePhones">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropertyValuePhones">
+      <EntityTypeMapping TypeName="Device_PropertyModel.PropertyValuePhones">
+        <MappingFragment StoreEntitySet="PropertyValuePhones">
+          <ScalarProperty Name="PTid" ColumnName="PTid" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropertyValueToPhones">
+      <EntityTypeMapping TypeName="Device_PropertyModel.PropertyValueToPhones">
+        <MappingFragment StoreEntitySet="PropertyValueToPhones">
+          <ScalarProperty Name="PVId" ColumnName="PVId" />
+          <ScalarProperty Name="PhoneId" ColumnName="PhoneId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListSitePhones">
+      <EntityTypeMapping TypeName="Device_PropertyModel.ListSitePhones">
+        <MappingFragment StoreEntitySet="ListSitePhones">
+          <ScalarProperty Name="LastDeviceId" ColumnName="LastDeviceId" />
+          <ScalarProperty Name="TotalResult" ColumnName="TotalResult" />
+          <ScalarProperty Name="IsUsing" ColumnName="IsUsing" />
+          <ScalarProperty Name="site" ColumnName="site" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

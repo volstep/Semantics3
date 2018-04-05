@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="24c96768510d41f28b9a4405d769af0f" Name="Diagram1" ZoomLevel="62">
+        <EntityTypeShape EntityType="Device_PropertyModel.Laptops" Width="1.5" PointX="7.625" PointY="7.75" />
+        <EntityTypeShape EntityType="Device_PropertyModel.PropertyType" Width="1.5" PointX="5.375" PointY="1.125" />
+        <EntityTypeShape EntityType="Device_PropertyModel.PropertyValue" Width="1.5" PointX="7.625" PointY="0.875" />
+        <EntityTypeShape EntityType="Device_PropertyModel.PropertyValueToLaptops" Width="1.5" PointX="9.875" PointY="0.875" />
+        <AssociationConnector Association="Device_PropertyModel.fk_VendorsToModels_VendorsId" />
+        <AssociationConnector Association="Device_PropertyModel.fk__PropertyType_Id" />
+        <AssociationConnector Association="Device_PropertyModel.fk_VendorsToModels_ModelsId" />
+        <EntityTypeShape EntityType="Device_PropertyModel.ListSite" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="Device_PropertyModel.Phones" Width="1.5" PointX="14.125" PointY="7.625" />
+        <EntityTypeShape EntityType="Device_PropertyModel.PropertyTypePhones" Width="1.5" PointX="12.625" PointY="0.875" />
+        <EntityTypeShape EntityType="Device_PropertyModel.PropertyValuePhones" Width="1.5" PointX="14.875" PointY="0.625" />
+        <EntityTypeShape EntityType="Device_PropertyModel.PropertyValueToPhones" Width="1.5" PointX="17.125" PointY="0.625" />
+        <AssociationConnector Association="Device_PropertyModel.fk_VendorsToModels_PhonessId" />
+        <AssociationConnector Association="Device_PropertyModel.fk__PropertyTypePhones_Id" />
+        <AssociationConnector Association="Device_PropertyModel.fk_VendorsToModels_PhonesId" />
+        <EntityTypeShape EntityType="Device_PropertyModel.ListSitePhones" Width="1.5" PointX="7.375" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

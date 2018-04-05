@@ -1,0 +1,630 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище Device_PropertyModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Laptops">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sem3_id" Type="nvarchar(max)" />
+          <Property Name="upc" Type="nvarchar(max)" />
+          <Property Name="ean" Type="nvarchar(max)" />
+          <Property Name="gtinsArray" Type="nvarchar(max)" />
+          <Property Name="cat_id" Type="nvarchar(max)" />
+          <Property Name="Category" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Brand" Type="nvarchar(max)" />
+          <Property Name="Manufacturer" Type="nvarchar(max)" />
+          <Property Name="Model" Type="nvarchar(max)" />
+          <Property Name="mpn" Type="nvarchar(max)" />
+          <Property Name="Series" Type="nvarchar(max)" />
+          <Property Name="Physical_width" Type="nvarchar(max)" />
+          <Property Name="Physical_length" Type="nvarchar(max)" />
+          <Property Name="Physical_height" Type="nvarchar(max)" />
+          <Property Name="Color" Type="nvarchar(max)" />
+          <Property Name="Weight" Type="nvarchar(max)" />
+          <Property Name="variation_id" Type="nvarchar(max)" />
+          <Property Name="variation_id_Array" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ListSite">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="site" Type="nvarchar(max)" />
+          <Property Name="IsUsing" Type="bit" />
+          <Property Name="TotalResult" Type="nvarchar(max)" />
+          <Property Name="LastDeviceId" Type="nvarchar(max)" />
+          <Property Name="Error" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ListSitePhones">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="site" Type="nvarchar(max)" />
+          <Property Name="IsUsing" Type="bit" />
+          <Property Name="TotalResult" Type="nvarchar(max)" />
+          <Property Name="LastDeviceId" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Phones">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sem3_id" Type="nvarchar(max)" />
+          <Property Name="upc" Type="nvarchar(max)" />
+          <Property Name="ean" Type="nvarchar(max)" />
+          <Property Name="gtinsArray" Type="nvarchar(max)" />
+          <Property Name="cat_id" Type="nvarchar(max)" />
+          <Property Name="Category" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Brand" Type="nvarchar(max)" />
+          <Property Name="Manufacturer" Type="nvarchar(max)" />
+          <Property Name="Model" Type="nvarchar(max)" />
+          <Property Name="mpn" Type="nvarchar(max)" />
+          <Property Name="Series" Type="nvarchar(max)" />
+          <Property Name="Physical_width" Type="nvarchar(max)" />
+          <Property Name="Physical_length" Type="nvarchar(max)" />
+          <Property Name="Physical_height" Type="nvarchar(max)" />
+          <Property Name="Color" Type="nvarchar(max)" />
+          <Property Name="Weight" Type="nvarchar(max)" />
+          <Property Name="variation_id" Type="nvarchar(max)" />
+          <Property Name="variation_id_Array" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PropertyType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PropertyTypePhones">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PropertyValue">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" />
+          <Property Name="PTid" Type="bigint" />
+        </EntityType>
+        <EntityType Name="PropertyValuePhones">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" />
+          <Property Name="PTid" Type="bigint" />
+        </EntityType>
+        <EntityType Name="PropertyValueToLaptops">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LapId" Type="bigint" />
+          <Property Name="PVId" Type="bigint" />
+        </EntityType>
+        <EntityType Name="PropertyValueToPhones">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PhoneId" Type="bigint" />
+          <Property Name="PVId" Type="bigint" />
+        </EntityType>
+        <Association Name="fk_[PropertyType_Id">
+          <End Role="PropertyType" Type="Self.PropertyType" Multiplicity="0..1" />
+          <End Role="PropertyValue" Type="Self.PropertyValue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyValue">
+              <PropertyRef Name="PTid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_[PropertyTypePhones_Id">
+          <End Role="PropertyTypePhones" Type="Self.PropertyTypePhones" Multiplicity="0..1" />
+          <End Role="PropertyValuePhones" Type="Self.PropertyValuePhones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyTypePhones">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyValuePhones">
+              <PropertyRef Name="PTid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_VendorsToModels_ModelsId">
+          <End Role="PropertyValue" Type="Self.PropertyValue" Multiplicity="0..1" />
+          <End Role="PropertyValueToLaptops" Type="Self.PropertyValueToLaptops" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyValue">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyValueToLaptops">
+              <PropertyRef Name="PVId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_VendorsToModels_PhonesId">
+          <End Role="PropertyValuePhones" Type="Self.PropertyValuePhones" Multiplicity="0..1" />
+          <End Role="PropertyValueToPhones" Type="Self.PropertyValueToPhones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyValuePhones">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyValueToPhones">
+              <PropertyRef Name="PVId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_VendorsToModels_PhonessId">
+          <End Role="Phones" Type="Self.Phones" Multiplicity="0..1" />
+          <End Role="PropertyValueToPhones" Type="Self.PropertyValueToPhones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Phones">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyValueToPhones">
+              <PropertyRef Name="PhoneId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_VendorsToModels_VendorsId">
+          <End Role="Laptops" Type="Self.Laptops" Multiplicity="0..1" />
+          <End Role="PropertyValueToLaptops" Type="Self.PropertyValueToLaptops" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Laptops">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyValueToLaptops">
+              <PropertyRef Name="LapId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище Device_PropertyModelContainer">
+          <EntitySet Name="Laptops" EntityType="Self.Laptops" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ListSite" EntityType="Self.ListSite" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ListSitePhones" EntityType="Self.ListSitePhones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Phones" EntityType="Self.Phones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyType" EntityType="Self.PropertyType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyTypePhones" EntityType="Self.PropertyTypePhones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyValue" EntityType="Self.PropertyValue" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyValuePhones" EntityType="Self.PropertyValuePhones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyValueToLaptops" EntityType="Self.PropertyValueToLaptops" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PropertyValueToPhones" EntityType="Self.PropertyValueToPhones" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_[PropertyType_Id" Association="Self.fk_[PropertyType_Id">
+            <End Role="PropertyType" EntitySet="PropertyType" />
+            <End Role="PropertyValue" EntitySet="PropertyValue" />
+          </AssociationSet>
+          <AssociationSet Name="fk_[PropertyTypePhones_Id" Association="Self.fk_[PropertyTypePhones_Id">
+            <End Role="PropertyTypePhones" EntitySet="PropertyTypePhones" />
+            <End Role="PropertyValuePhones" EntitySet="PropertyValuePhones" />
+          </AssociationSet>
+          <AssociationSet Name="fk_VendorsToModels_ModelsId" Association="Self.fk_VendorsToModels_ModelsId">
+            <End Role="PropertyValue" EntitySet="PropertyValue" />
+            <End Role="PropertyValueToLaptops" EntitySet="PropertyValueToLaptops" />
+          </AssociationSet>
+          <AssociationSet Name="fk_VendorsToModels_PhonesId" Association="Self.fk_VendorsToModels_PhonesId">
+            <End Role="PropertyValuePhones" EntitySet="PropertyValuePhones" />
+            <End Role="PropertyValueToPhones" EntitySet="PropertyValueToPhones" />
+          </AssociationSet>
+          <AssociationSet Name="fk_VendorsToModels_PhonessId" Association="Self.fk_VendorsToModels_PhonessId">
+            <End Role="Phones" EntitySet="Phones" />
+            <End Role="PropertyValueToPhones" EntitySet="PropertyValueToPhones" />
+          </AssociationSet>
+          <AssociationSet Name="fk_VendorsToModels_VendorsId" Association="Self.fk_VendorsToModels_VendorsId">
+            <End Role="Laptops" EntitySet="Laptops" />
+            <End Role="PropertyValueToLaptops" EntitySet="PropertyValueToLaptops" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Device_PropertyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Device_PropertyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Laptops" EntityType="Device_PropertyModel.Laptops" />
+          <EntitySet Name="PropertyType" EntityType="Device_PropertyModel.PropertyType" />
+          <EntitySet Name="PropertyValue" EntityType="Device_PropertyModel.PropertyValue" />
+          <EntitySet Name="PropertyValueToLaptops" EntityType="Device_PropertyModel.PropertyValueToLaptops" />
+          <AssociationSet Name="fk_VendorsToModels_VendorsId" Association="Device_PropertyModel.fk_VendorsToModels_VendorsId">
+            <End Role="Laptops" EntitySet="Laptops" />
+            <End Role="PropertyValueToLaptops" EntitySet="PropertyValueToLaptops" />
+          </AssociationSet>
+          <AssociationSet Name="fk__PropertyType_Id" Association="Device_PropertyModel.fk__PropertyType_Id">
+            <End Role="PropertyType" EntitySet="PropertyType" />
+            <End Role="PropertyValue" EntitySet="PropertyValue" />
+          </AssociationSet>
+          <AssociationSet Name="fk_VendorsToModels_ModelsId" Association="Device_PropertyModel.fk_VendorsToModels_ModelsId">
+            <End Role="PropertyValue" EntitySet="PropertyValue" />
+            <End Role="PropertyValueToLaptops" EntitySet="PropertyValueToLaptops" />
+          </AssociationSet>
+          <EntitySet Name="ListSite" EntityType="Device_PropertyModel.ListSite" />
+          <EntitySet Name="Phones" EntityType="Device_PropertyModel.Phones" />
+          <EntitySet Name="PropertyTypePhones" EntityType="Device_PropertyModel.PropertyTypePhones" />
+          <EntitySet Name="PropertyValuePhones" EntityType="Device_PropertyModel.PropertyValuePhones" />
+          <EntitySet Name="PropertyValueToPhones" EntityType="Device_PropertyModel.PropertyValueToPhones" />
+          <AssociationSet Name="fk_VendorsToModels_PhonessId" Association="Device_PropertyModel.fk_VendorsToModels_PhonessId">
+            <End Role="Phones" EntitySet="Phones" />
+            <End Role="PropertyValueToPhones" EntitySet="PropertyValueToPhones" />
+          </AssociationSet>
+          <AssociationSet Name="fk__PropertyTypePhones_Id" Association="Device_PropertyModel.fk__PropertyTypePhones_Id">
+            <End Role="PropertyTypePhones" EntitySet="PropertyTypePhones" />
+            <End Role="PropertyValuePhones" EntitySet="PropertyValuePhones" />
+          </AssociationSet>
+          <AssociationSet Name="fk_VendorsToModels_PhonesId" Association="Device_PropertyModel.fk_VendorsToModels_PhonesId">
+            <End Role="PropertyValuePhones" EntitySet="PropertyValuePhones" />
+            <End Role="PropertyValueToPhones" EntitySet="PropertyValueToPhones" />
+          </AssociationSet>
+          <EntitySet Name="ListSitePhones" EntityType="Device_PropertyModel.ListSitePhones" />
+        </EntityContainer>
+        <EntityType Name="Laptops">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sem3_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="upc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ean" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="gtinsArray" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="cat_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Brand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Manufacturer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mpn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Series" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Physical_width" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Physical_length" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Physical_height" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Weight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="variation_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="variation_id_Array" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PropertyValueToLaptops" Relationship="Device_PropertyModel.fk_VendorsToModels_VendorsId" FromRole="Laptops" ToRole="PropertyValueToLaptops" />
+        </EntityType>
+        <EntityType Name="PropertyType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PropertyValue" Relationship="Device_PropertyModel.fk__PropertyType_Id" FromRole="PropertyType" ToRole="PropertyValue" />
+        </EntityType>
+        <EntityType Name="PropertyValue">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PTid" Type="Int64" />
+          <NavigationProperty Name="PropertyType" Relationship="Device_PropertyModel.fk__PropertyType_Id" FromRole="PropertyValue" ToRole="PropertyType" />
+          <NavigationProperty Name="PropertyValueToLaptops" Relationship="Device_PropertyModel.fk_VendorsToModels_ModelsId" FromRole="PropertyValue" ToRole="PropertyValueToLaptops" />
+        </EntityType>
+        <EntityType Name="PropertyValueToLaptops">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LapId" Type="Int64" />
+          <Property Name="PVId" Type="Int64" />
+          <NavigationProperty Name="Laptops" Relationship="Device_PropertyModel.fk_VendorsToModels_VendorsId" FromRole="PropertyValueToLaptops" ToRole="Laptops" />
+          <NavigationProperty Name="PropertyValue" Relationship="Device_PropertyModel.fk_VendorsToModels_ModelsId" FromRole="PropertyValueToLaptops" ToRole="PropertyValue" />
+        </EntityType>
+        <Association Name="fk_VendorsToModels_VendorsId">
+          <End Type="Device_PropertyModel.Laptops" Role="Laptops" Multiplicity="0..1" />
+          <End Type="Device_PropertyModel.PropertyValueToLaptops" Role="PropertyValueToLaptops" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Laptops">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyValueToLaptops">
+              <PropertyRef Name="LapId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk__PropertyType_Id">
+          <End Type="Device_PropertyModel.PropertyType" Role="PropertyType" Multiplicity="0..1" />
+          <End Type="Device_PropertyModel.PropertyValue" Role="PropertyValue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyValue">
+              <PropertyRef Name="PTid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_VendorsToModels_ModelsId">
+          <End Type="Device_PropertyModel.PropertyValue" Role="PropertyValue" Multiplicity="0..1" />
+          <End Type="Device_PropertyModel.PropertyValueToLaptops" Role="PropertyValueToLaptops" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyValue">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyValueToLaptops">
+              <PropertyRef Name="PVId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ListSite">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="site" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsUsing" Type="Boolean" />
+          <Property Name="TotalResult" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Error" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastDeviceId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Phones">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sem3_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="upc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ean" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="gtinsArray" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="cat_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Brand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Manufacturer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mpn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Series" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Physical_width" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Physical_length" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Physical_height" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Weight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="variation_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="variation_id_Array" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PropertyValueToPhones" Relationship="Device_PropertyModel.fk_VendorsToModels_PhonessId" FromRole="Phones" ToRole="PropertyValueToPhones" />
+        </EntityType>
+        <EntityType Name="PropertyTypePhones">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PropertyValuePhones" Relationship="Device_PropertyModel.fk__PropertyTypePhones_Id" FromRole="PropertyTypePhones" ToRole="PropertyValuePhones" />
+        </EntityType>
+        <EntityType Name="PropertyValuePhones">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PTid" Type="Int64" />
+          <NavigationProperty Name="PropertyTypePhones" Relationship="Device_PropertyModel.fk__PropertyTypePhones_Id" FromRole="PropertyValuePhones" ToRole="PropertyTypePhones" />
+          <NavigationProperty Name="PropertyValueToPhones" Relationship="Device_PropertyModel.fk_VendorsToModels_PhonesId" FromRole="PropertyValuePhones" ToRole="PropertyValueToPhones" />
+        </EntityType>
+        <EntityType Name="PropertyValueToPhones">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PhoneId" Type="Int64" />
+          <Property Name="PVId" Type="Int64" />
+          <NavigationProperty Name="Phones" Relationship="Device_PropertyModel.fk_VendorsToModels_PhonessId" FromRole="PropertyValueToPhones" ToRole="Phones" />
+          <NavigationProperty Name="PropertyValuePhones" Relationship="Device_PropertyModel.fk_VendorsToModels_PhonesId" FromRole="PropertyValueToPhones" ToRole="PropertyValuePhones" />
+        </EntityType>
+        <Association Name="fk_VendorsToModels_PhonessId">
+          <End Type="Device_PropertyModel.Phones" Role="Phones" Multiplicity="0..1" />
+          <End Type="Device_PropertyModel.PropertyValueToPhones" Role="PropertyValueToPhones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Phones">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyValueToPhones">
+              <PropertyRef Name="PhoneId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk__PropertyTypePhones_Id">
+          <End Type="Device_PropertyModel.PropertyTypePhones" Role="PropertyTypePhones" Multiplicity="0..1" />
+          <End Type="Device_PropertyModel.PropertyValuePhones" Role="PropertyValuePhones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyTypePhones">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyValuePhones">
+              <PropertyRef Name="PTid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_VendorsToModels_PhonesId">
+          <End Type="Device_PropertyModel.PropertyValuePhones" Role="PropertyValuePhones" Multiplicity="0..1" />
+          <End Type="Device_PropertyModel.PropertyValueToPhones" Role="PropertyValueToPhones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyValuePhones">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PropertyValueToPhones">
+              <PropertyRef Name="PVId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ListSitePhones">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="site" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsUsing" Type="Boolean" />
+          <Property Name="TotalResult" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastDeviceId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Device_PropertyModelContainer" CdmEntityContainer="Device_PropertyEntities">
+          <EntitySetMapping Name="Laptops">
+            <EntityTypeMapping TypeName="Device_PropertyModel.Laptops">
+              <MappingFragment StoreEntitySet="Laptops">
+                <ScalarProperty Name="variation_id_Array" ColumnName="variation_id_Array" />
+                <ScalarProperty Name="variation_id" ColumnName="variation_id" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Physical_height" ColumnName="Physical_height" />
+                <ScalarProperty Name="Physical_length" ColumnName="Physical_length" />
+                <ScalarProperty Name="Physical_width" ColumnName="Physical_width" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="mpn" ColumnName="mpn" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+                <ScalarProperty Name="gtinsArray" ColumnName="gtinsArray" />
+                <ScalarProperty Name="ean" ColumnName="ean" />
+                <ScalarProperty Name="upc" ColumnName="upc" />
+                <ScalarProperty Name="sem3_id" ColumnName="sem3_id" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyType">
+            <EntityTypeMapping TypeName="Device_PropertyModel.PropertyType">
+              <MappingFragment StoreEntitySet="PropertyType">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyValue">
+            <EntityTypeMapping TypeName="Device_PropertyModel.PropertyValue">
+              <MappingFragment StoreEntitySet="PropertyValue">
+                <ScalarProperty Name="PTid" ColumnName="PTid" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyValueToLaptops">
+            <EntityTypeMapping TypeName="Device_PropertyModel.PropertyValueToLaptops">
+              <MappingFragment StoreEntitySet="PropertyValueToLaptops">
+                <ScalarProperty Name="PVId" ColumnName="PVId" />
+                <ScalarProperty Name="LapId" ColumnName="LapId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ListSite">
+            <EntityTypeMapping TypeName="Device_PropertyModel.ListSite">
+              <MappingFragment StoreEntitySet="ListSite">
+                <ScalarProperty Name="LastDeviceId" ColumnName="LastDeviceId" />
+                <ScalarProperty Name="Error" ColumnName="Error" />
+                <ScalarProperty Name="TotalResult" ColumnName="TotalResult" />
+                <ScalarProperty Name="IsUsing" ColumnName="IsUsing" />
+                <ScalarProperty Name="site" ColumnName="site" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Phones">
+            <EntityTypeMapping TypeName="Device_PropertyModel.Phones">
+              <MappingFragment StoreEntitySet="Phones">
+                <ScalarProperty Name="variation_id_Array" ColumnName="variation_id_Array" />
+                <ScalarProperty Name="variation_id" ColumnName="variation_id" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Physical_height" ColumnName="Physical_height" />
+                <ScalarProperty Name="Physical_length" ColumnName="Physical_length" />
+                <ScalarProperty Name="Physical_width" ColumnName="Physical_width" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="mpn" ColumnName="mpn" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+                <ScalarProperty Name="gtinsArray" ColumnName="gtinsArray" />
+                <ScalarProperty Name="ean" ColumnName="ean" />
+                <ScalarProperty Name="upc" ColumnName="upc" />
+                <ScalarProperty Name="sem3_id" ColumnName="sem3_id" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyTypePhones">
+            <EntityTypeMapping TypeName="Device_PropertyModel.PropertyTypePhones">
+              <MappingFragment StoreEntitySet="PropertyTypePhones">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyValuePhones">
+            <EntityTypeMapping TypeName="Device_PropertyModel.PropertyValuePhones">
+              <MappingFragment StoreEntitySet="PropertyValuePhones">
+                <ScalarProperty Name="PTid" ColumnName="PTid" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyValueToPhones">
+            <EntityTypeMapping TypeName="Device_PropertyModel.PropertyValueToPhones">
+              <MappingFragment StoreEntitySet="PropertyValueToPhones">
+                <ScalarProperty Name="PVId" ColumnName="PVId" />
+                <ScalarProperty Name="PhoneId" ColumnName="PhoneId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ListSitePhones">
+            <EntityTypeMapping TypeName="Device_PropertyModel.ListSitePhones">
+              <MappingFragment StoreEntitySet="ListSitePhones">
+                <ScalarProperty Name="LastDeviceId" ColumnName="LastDeviceId" />
+                <ScalarProperty Name="TotalResult" ColumnName="TotalResult" />
+                <ScalarProperty Name="IsUsing" ColumnName="IsUsing" />
+                <ScalarProperty Name="site" ColumnName="site" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

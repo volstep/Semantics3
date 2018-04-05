@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище Device_PropertyModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Laptop">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="upc" Type="nvarchar(max)" />
+    <Property Name="Brand" Type="nvarchar(max)" />
+    <Property Name="Model" Type="nvarchar(max)" />
+    <Property Name="Manufacturer" Type="nvarchar(max)" />
+    <Property Name="Interface" Type="nvarchar(max)" />
+    <Property Name="VGA" Type="nvarchar(max)" />
+    <Property Name="DvD" Type="nvarchar(max)" />
+    <Property Name="HDMI" Type="nvarchar(max)" />
+    <Property Name="WebCam" Type="nvarchar(max)" />
+    <Property Name="Micro" Type="nvarchar(max)" />
+    <Property Name="Bluetooth" Type="nvarchar(max)" />
+    <Property Name="CardReader" Type="nvarchar(max)" />
+    <Property Name="AudiOut" Type="nvarchar(max)" />
+    <Property Name="Ethernet" Type="nvarchar(max)" />
+    <Property Name="Optical_Drive_Type" Type="nvarchar(max)" />
+    <Property Name="Total_USB" Type="nvarchar(max)" />
+    <Property Name="Bluetooth_Standard" Type="nvarchar(max)" />
+    <Property Name="WiFi_Standard" Type="nvarchar(max)" />
+    <Property Name="Wireless_Protocol" Type="nvarchar(max)" />
+    <Property Name="Product_Color" Type="nvarchar(max)" />
+    <Property Name="Product_Type" Type="nvarchar(max)" />
+    <Property Name="Product_Line" Type="nvarchar(max)" />
+    <Property Name="RAM_Value" Type="nvarchar(max)" />
+    <Property Name="RAM_Type" Type="nvarchar(max)" />
+    <Property Name="RAM_Speed" Type="nvarchar(max)" />
+    <Property Name="HDD_Value" Type="nvarchar(max)" />
+    <Property Name="Processor" Type="nvarchar(max)" />
+    <Property Name="Processor_Cache" Type="nvarchar(max)" />
+    <Property Name="Processor_Speed" Type="nvarchar(max)" />
+    <Property Name="Processor_MaxTurboSpeed" Type="nvarchar(max)" />
+    <Property Name="Processor_Manufacturer" Type="nvarchar(max)" />
+    <Property Name="Processor_Type" Type="nvarchar(max)" />
+    <Property Name="Processor_Chipset" Type="nvarchar(max)" />
+    <Property Name="Processor_Graphics" Type="nvarchar(max)" />
+    <Property Name="Screen_Size_inches" Type="nvarchar(max)" />
+    <Property Name="Screen_Size_Metric" Type="nvarchar(max)" />
+    <Property Name="Screen_Relation" Type="nvarchar(max)" />
+    <Property Name="Screen_Resolutions" Type="nvarchar(max)" />
+    <Property Name="Screen_Type" Type="nvarchar(max)" />
+    <Property Name="Operating_System" Type="nvarchar(max)" />
+    <Property Name="Battery_Energy" Type="nvarchar(max)" />
+    <Property Name="Dimensions" Type="nvarchar(max)" />
+    <Property Name="DescriptionEng" Type="nvarchar(max)" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="Other" Type="nvarchar(max)" />
+    <Property Name="HDD_Speed" Type="nvarchar(max)" />
+    <Property Name="HDD_Drive" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Laptops">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sem3_id" Type="nvarchar(max)" />
+    <Property Name="upc" Type="nvarchar(max)" />
+    <Property Name="ean" Type="nvarchar(max)" />
+    <Property Name="gtinsArray" Type="nvarchar(max)" />
+    <Property Name="cat_id" Type="nvarchar(max)" />
+    <Property Name="Category" Type="nvarchar(max)" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Brand" Type="nvarchar(max)" />
+    <Property Name="Manufacturer" Type="nvarchar(max)" />
+    <Property Name="Model" Type="nvarchar(max)" />
+    <Property Name="mpn" Type="nvarchar(max)" />
+    <Property Name="Series" Type="nvarchar(max)" />
+    <Property Name="Physical_width" Type="nvarchar(max)" />
+    <Property Name="Physical_length" Type="nvarchar(max)" />
+    <Property Name="Physical_height" Type="nvarchar(max)" />
+    <Property Name="Color" Type="nvarchar(max)" />
+    <Property Name="Weight" Type="nvarchar(max)" />
+    <Property Name="variation_id" Type="nvarchar(max)" />
+    <Property Name="variation_id_Array" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ListSite">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="site" Type="nvarchar(max)" />
+    <Property Name="IsUsing" Type="bit" />
+    <Property Name="TotalResult" Type="nvarchar(max)" />
+    <Property Name="LastDeviceId" Type="nvarchar(max)" />
+    <Property Name="Error" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ListSitePhones">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="site" Type="nvarchar(max)" />
+    <Property Name="IsUsing" Type="bit" />
+    <Property Name="TotalResult" Type="nvarchar(max)" />
+    <Property Name="LastDeviceId" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="NewLaptop">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sem3_id" Type="nvarchar(max)" />
+    <Property Name="upc" Type="nvarchar(max)" />
+    <Property Name="ean" Type="nvarchar(max)" />
+    <Property Name="gtinsArray" Type="nvarchar(max)" />
+    <Property Name="cat_id" Type="nvarchar(max)" />
+    <Property Name="Category" Type="nvarchar(max)" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Brand" Type="nvarchar(max)" />
+    <Property Name="Manufacturer" Type="nvarchar(max)" />
+    <Property Name="Model" Type="nvarchar(max)" />
+    <Property Name="mpn" Type="nvarchar(max)" />
+    <Property Name="Series" Type="nvarchar(max)" />
+    <Property Name="Physical_width" Type="nvarchar(max)" />
+    <Property Name="Physical_length" Type="nvarchar(max)" />
+    <Property Name="Physical_height" Type="nvarchar(max)" />
+    <Property Name="Color" Type="nvarchar(max)" />
+    <Property Name="Weight" Type="nvarchar(max)" />
+    <Property Name="variation_id" Type="nvarchar(max)" />
+    <Property Name="variation_id_Array" Type="nvarchar(max)" />
+    <Property Name="Graphic" Type="nvarchar(max)" />
+    <Property Name="Interface" Type="nvarchar(max)" />
+    <Property Name="VGA" Type="nvarchar(max)" />
+    <Property Name="DvD" Type="nvarchar(max)" />
+    <Property Name="HDMI" Type="nvarchar(max)" />
+    <Property Name="WebCam" Type="nvarchar(max)" />
+    <Property Name="Micro" Type="nvarchar(max)" />
+    <Property Name="Bluetooth" Type="nvarchar(max)" />
+    <Property Name="CardReader" Type="nvarchar(max)" />
+    <Property Name="AudiOut" Type="nvarchar(max)" />
+    <Property Name="Ethernet" Type="nvarchar(max)" />
+    <Property Name="Optical_Drive_Type" Type="nvarchar(max)" />
+    <Property Name="Total_USB" Type="nvarchar(max)" />
+    <Property Name="Bluetooth_Standard" Type="nvarchar(max)" />
+    <Property Name="WiFi_Standard" Type="nvarchar(max)" />
+    <Property Name="Product_Color" Type="nvarchar(max)" />
+    <Property Name="Product_Type" Type="nvarchar(max)" />
+    <Property Name="Product_Line" Type="nvarchar(max)" />
+    <Property Name="RAM_Size" Type="nvarchar(max)" />
+    <Property Name="RAM_Speed" Type="nvarchar(max)" />
+    <Property Name="RAM_Type" Type="nvarchar(max)" />
+    <Property Name="Processor_Cache" Type="nvarchar(max)" />
+    <Property Name="Processor_Speed" Type="nvarchar(max)" />
+    <Property Name="Processor_MaxTurboSpeed" Type="nvarchar(max)" />
+    <Property Name="Processor_Type" Type="nvarchar(max)" />
+    <Property Name="Processor_Graphics" Type="nvarchar(max)" />
+    <Property Name="Processor" Type="nvarchar(max)" />
+    <Property Name="Processor_Manufacturer" Type="nvarchar(max)" />
+    <Property Name="Processor_Chipset" Type="nvarchar(max)" />
+    <Property Name="Screen_Resolutions" Type="nvarchar(max)" />
+    <Property Name="Screen_Size_inches" Type="nvarchar(max)" />
+    <Property Name="Screen_Size_Metric" Type="nvarchar(max)" />
+    <Property Name="Screen_Relation" Type="nvarchar(max)" />
+    <Property Name="Screen_Type" Type="nvarchar(max)" />
+    <Property Name="HDD_Size" Type="nvarchar(max)" />
+    <Property Name="HDD_DriveInterface" Type="nvarchar(max)" />
+    <Property Name="HDD_Speed" Type="nvarchar(max)" />
+    <Property Name="Battery_Energy" Type="nvarchar(max)" />
+    <Property Name="Dimensions" Type="nvarchar(max)" />
+    <Property Name="Operating_System" Type="nvarchar(max)" />
+    <Property Name="Wireless_Type" Type="nvarchar(max)" />
+    <Property Name="DescriptionEng" Type="nvarchar(max)" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="Other" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Phones">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sem3_id" Type="nvarchar(max)" />
+    <Property Name="upc" Type="nvarchar(max)" />
+    <Property Name="ean" Type="nvarchar(max)" />
+    <Property Name="gtinsArray" Type="nvarchar(max)" />
+    <Property Name="cat_id" Type="nvarchar(max)" />
+    <Property Name="Category" Type="nvarchar(max)" />
+    <Property Name="Name" Type="nvarchar(max)" />
+    <Property Name="Brand" Type="nvarchar(max)" />
+    <Property Name="Manufacturer" Type="nvarchar(max)" />
+    <Property Name="Model" Type="nvarchar(max)" />
+    <Property Name="mpn" Type="nvarchar(max)" />
+    <Property Name="Series" Type="nvarchar(max)" />
+    <Property Name="Physical_width" Type="nvarchar(max)" />
+    <Property Name="Physical_length" Type="nvarchar(max)" />
+    <Property Name="Physical_height" Type="nvarchar(max)" />
+    <Property Name="Color" Type="nvarchar(max)" />
+    <Property Name="Weight" Type="nvarchar(max)" />
+    <Property Name="variation_id" Type="nvarchar(max)" />
+    <Property Name="variation_id_Array" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PropertyType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PropertyTypePhones">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PropertyValue">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Value" Type="nvarchar(max)" />
+    <Property Name="PTid" Type="bigint" />
+  </EntityType>
+  <EntityType Name="PropertyValuePhones">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Value" Type="nvarchar(max)" />
+    <Property Name="PTid" Type="bigint" />
+  </EntityType>
+  <EntityType Name="PropertyValueToLaptops">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LapId" Type="bigint" />
+    <Property Name="PVId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="PropertyValueToPhones">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PhoneId" Type="bigint" />
+    <Property Name="PVId" Type="bigint" />
+  </EntityType>
+  <Association Name="fk_[PropertyType_Id">
+    <End Role="PropertyType" Type="Self.PropertyType" Multiplicity="0..1" />
+    <End Role="PropertyValue" Type="Self.PropertyValue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PropertyValue">
+        <PropertyRef Name="PTid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_[PropertyTypePhones_Id">
+    <End Role="PropertyTypePhones" Type="Self.PropertyTypePhones" Multiplicity="0..1" />
+    <End Role="PropertyValuePhones" Type="Self.PropertyValuePhones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyTypePhones">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PropertyValuePhones">
+        <PropertyRef Name="PTid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VendorsToModels_ModelsId">
+    <End Role="PropertyValue" Type="Self.PropertyValue" Multiplicity="0..1" />
+    <End Role="PropertyValueToLaptops" Type="Self.PropertyValueToLaptops" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyValue">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PropertyValueToLaptops">
+        <PropertyRef Name="PVId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VendorsToModels_PhonesId">
+    <End Role="PropertyValuePhones" Type="Self.PropertyValuePhones" Multiplicity="0..1" />
+    <End Role="PropertyValueToPhones" Type="Self.PropertyValueToPhones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyValuePhones">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PropertyValueToPhones">
+        <PropertyRef Name="PVId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VendorsToModels_PhonessId">
+    <End Role="Phones" Type="Self.Phones" Multiplicity="0..1" />
+    <End Role="PropertyValueToPhones" Type="Self.PropertyValueToPhones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phones">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PropertyValueToPhones">
+        <PropertyRef Name="PhoneId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VendorsToModels_VendorsId">
+    <End Role="Laptops" Type="Self.Laptops" Multiplicity="0..1" />
+    <End Role="PropertyValueToLaptops" Type="Self.PropertyValueToLaptops" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Laptops">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PropertyValueToLaptops">
+        <PropertyRef Name="LapId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище Device_PropertyModelContainer">
+    <EntitySet Name="Laptop" EntityType="Self.Laptop" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Laptops" EntityType="Self.Laptops" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ListSite" EntityType="Self.ListSite" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ListSitePhones" EntityType="Self.ListSitePhones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NewLaptop" EntityType="Self.NewLaptop" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Phones" EntityType="Self.Phones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PropertyType" EntityType="Self.PropertyType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PropertyTypePhones" EntityType="Self.PropertyTypePhones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PropertyValue" EntityType="Self.PropertyValue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PropertyValuePhones" EntityType="Self.PropertyValuePhones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PropertyValueToLaptops" EntityType="Self.PropertyValueToLaptops" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PropertyValueToPhones" EntityType="Self.PropertyValueToPhones" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_[PropertyType_Id" Association="Self.fk_[PropertyType_Id">
+      <End Role="PropertyType" EntitySet="PropertyType" />
+      <End Role="PropertyValue" EntitySet="PropertyValue" />
+    </AssociationSet>
+    <AssociationSet Name="fk_[PropertyTypePhones_Id" Association="Self.fk_[PropertyTypePhones_Id">
+      <End Role="PropertyTypePhones" EntitySet="PropertyTypePhones" />
+      <End Role="PropertyValuePhones" EntitySet="PropertyValuePhones" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VendorsToModels_ModelsId" Association="Self.fk_VendorsToModels_ModelsId">
+      <End Role="PropertyValue" EntitySet="PropertyValue" />
+      <End Role="PropertyValueToLaptops" EntitySet="PropertyValueToLaptops" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VendorsToModels_PhonesId" Association="Self.fk_VendorsToModels_PhonesId">
+      <End Role="PropertyValuePhones" EntitySet="PropertyValuePhones" />
+      <End Role="PropertyValueToPhones" EntitySet="PropertyValueToPhones" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VendorsToModels_PhonessId" Association="Self.fk_VendorsToModels_PhonessId">
+      <End Role="Phones" EntitySet="Phones" />
+      <End Role="PropertyValueToPhones" EntitySet="PropertyValueToPhones" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VendorsToModels_VendorsId" Association="Self.fk_VendorsToModels_VendorsId">
+      <End Role="Laptops" EntitySet="Laptops" />
+      <End Role="PropertyValueToLaptops" EntitySet="PropertyValueToLaptops" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Device_PropertyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Laptop">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="upc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Brand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Manufacturer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Interface" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VGA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DvD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HDMI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WebCam" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Micro" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Bluetooth" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CardReader" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AudiOut" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ethernet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Optical_Drive_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Total_USB" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Bluetooth_Standard" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WiFi_Standard" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Wireless_Protocol" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Product_Color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Product_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Product_Line" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RAM_Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RAM_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RAM_Speed" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HDD_Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Processor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Processor_Cache" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Processor_Speed" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Processor_MaxTurboSpeed" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Processor_Manufacturer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Processor_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Processor_Chipset" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Processor_Graphics" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Screen_Size_inches" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Screen_Size_Metric" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Screen_Relation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Screen_Resolutions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Screen_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Operating_System" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Battery_Energy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Dimensions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DescriptionEng" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HDD_Speed" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HDD_Drive" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="Device_PropertyEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Laptop" EntityType="Self.Laptop" />
+    <EntitySet Name="NewLaptop" EntityType="Device_PropertyModel.NewLaptop" />
+    <EntitySet Name="Laptops" EntityType="Device_PropertyModel.Laptops" />
+    <EntitySet Name="PropertyType" EntityType="Device_PropertyModel.PropertyType" />
+    <EntitySet Name="PropertyValue" EntityType="Device_PropertyModel.PropertyValue" />
+    <EntitySet Name="PropertyValueToLaptops" EntityType="Device_PropertyModel.PropertyValueToLaptops" />
+    <AssociationSet Name="fk_VendorsToModels_VendorsId" Association="Device_PropertyModel.fk_VendorsToModels_VendorsId">
+      <End Role="Laptops" EntitySet="Laptops" />
+      <End Role="PropertyValueToLaptops" EntitySet="PropertyValueToLaptops" />
+    </AssociationSet>
+    <AssociationSet Name="fk__PropertyType_Id" Association="Device_PropertyModel.fk__PropertyType_Id">
+      <End Role="PropertyType" EntitySet="PropertyType" />
+      <End Role="PropertyValue" EntitySet="PropertyValue" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VendorsToModels_ModelsId" Association="Device_PropertyModel.fk_VendorsToModels_ModelsId">
+      <End Role="PropertyValue" EntitySet="PropertyValue" />
+      <End Role="PropertyValueToLaptops" EntitySet="PropertyValueToLaptops" />
+    </AssociationSet>
+    <EntitySet Name="ListSite" EntityType="Device_PropertyModel.ListSite" />
+    <EntitySet Name="Phones" EntityType="Device_PropertyModel.Phones" />
+    <EntitySet Name="PropertyTypePhones" EntityType="Device_PropertyModel.PropertyTypePhones" />
+    <EntitySet Name="PropertyValuePhones" EntityType="Device_PropertyModel.PropertyValuePhones" />
+    <EntitySet Name="PropertyValueToPhones" EntityType="Device_PropertyModel.PropertyValueToPhones" />
+    <AssociationSet Name="fk_VendorsToModels_PhonessId" Association="Device_PropertyModel.fk_VendorsToModels_PhonessId">
+      <End Role="Phones" EntitySet="Phones" />
+      <End Role="PropertyValueToPhones" EntitySet="PropertyValueToPhones" />
+    </AssociationSet>
+    <AssociationSet Name="fk__PropertyTypePhones_Id" Association="Device_PropertyModel.fk__PropertyTypePhones_Id">
+      <End Role="PropertyTypePhones" EntitySet="PropertyTypePhones" />
+      <End Role="PropertyValuePhones" EntitySet="PropertyValuePhones" />
+    </AssociationSet>
+    <AssociationSet Name="fk_VendorsToModels_PhonesId" Association="Device_PropertyModel.fk_VendorsToModels_PhonesId">
+      <End Role="PropertyValuePhones" EntitySet="PropertyValuePhones" />
+      <End Role="PropertyValueToPhones" EntitySet="PropertyValueToPhones" />
+    </AssociationSet>
+    <EntitySet Name="ListSitePhones" EntityType="Device_PropertyModel.ListSitePhones" />
+  </EntityContainer>
+  <EntityType Name="NewLaptop">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sem3_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="upc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ean" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="gtinsArray" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="cat_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Brand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Manufacturer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="mpn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Series" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Physical_width" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Physical_length" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Physical_height" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Weight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="variation_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="variation_id_Array" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Graphic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Interface" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VGA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DvD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HDMI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WebCam" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Micro" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Bluetooth" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CardReader" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AudiOut" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ethernet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Optical_Drive_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Total_USB" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Bluetooth_Standard" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="WiFi_Standard" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Product_Color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Product_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Product_Line" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RAM_Size" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RAM_Speed" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RAM_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Processor_Cache" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Processor_Speed" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Processor_MaxTurboSpeed" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Processor_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Processor_Graphics" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Processor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Processor_Manufacturer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Processor_Chipset" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Screen_Resolutions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Screen_Size_inches" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Screen_Size_Metric" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Screen_Relation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Screen_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HDD_Size" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HDD_DriveInterface" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HDD_Speed" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Battery_Energy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Dimensions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Operating_System" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Wireless_Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DescriptionEng" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="Other" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Laptops">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sem3_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="upc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ean" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="gtinsArray" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="cat_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Brand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Manufacturer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="mpn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Series" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Physical_width" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Physical_length" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Physical_height" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Weight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="variation_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="variation_id_Array" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PropertyValueToLaptops" Relationship="Device_PropertyModel.fk_VendorsToModels_VendorsId" FromRole="Laptops" ToRole="PropertyValueToLaptops" />
+  </EntityType>
+  <EntityType Name="PropertyType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PropertyValue" Relationship="Device_PropertyModel.fk__PropertyType_Id" FromRole="PropertyType" ToRole="PropertyValue" />
+  </EntityType>
+  <EntityType Name="PropertyValue">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PTid" Type="Int64" />
+    <NavigationProperty Name="PropertyType" Relationship="Device_PropertyModel.fk__PropertyType_Id" FromRole="PropertyValue" ToRole="PropertyType" />
+    <NavigationProperty Name="PropertyValueToLaptops" Relationship="Device_PropertyModel.fk_VendorsToModels_ModelsId" FromRole="PropertyValue" ToRole="PropertyValueToLaptops" />
+  </EntityType>
+  <EntityType Name="PropertyValueToLaptops">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LapId" Type="Int64" />
+    <Property Name="PVId" Type="Int64" />
+    <NavigationProperty Name="Laptops" Relationship="Device_PropertyModel.fk_VendorsToModels_VendorsId" FromRole="PropertyValueToLaptops" ToRole="Laptops" />
+    <NavigationProperty Name="PropertyValue" Relationship="Device_PropertyModel.fk_VendorsToModels_ModelsId" FromRole="PropertyValueToLaptops" ToRole="PropertyValue" />
+  </EntityType>
+  <Association Name="fk_VendorsToModels_VendorsId">
+    <End Type="Device_PropertyModel.Laptops" Role="Laptops" Multiplicity="0..1" />
+    <End Type="Device_PropertyModel.PropertyValueToLaptops" Role="PropertyValueToLaptops" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Laptops">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PropertyValueToLaptops">
+        <PropertyRef Name="LapId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk__PropertyType_Id">
+    <End Type="Device_PropertyModel.PropertyType" Role="PropertyType" Multiplicity="0..1" />
+    <End Type="Device_PropertyModel.PropertyValue" Role="PropertyValue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PropertyValue">
+        <PropertyRef Name="PTid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VendorsToModels_ModelsId">
+    <End Type="Device_PropertyModel.PropertyValue" Role="PropertyValue" Multiplicity="0..1" />
+    <End Type="Device_PropertyModel.PropertyValueToLaptops" Role="PropertyValueToLaptops" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyValue">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PropertyValueToLaptops">
+        <PropertyRef Name="PVId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ListSite">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="site" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsUsing" Type="Boolean" />
+    <Property Name="TotalResult" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Error" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastDeviceId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Phones">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sem3_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="upc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ean" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="gtinsArray" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="cat_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Brand" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Manufacturer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="mpn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Series" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Physical_width" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Physical_length" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Physical_height" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Weight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="variation_id" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="variation_id_Array" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PropertyValueToPhones" Relationship="Device_PropertyModel.fk_VendorsToModels_PhonessId" FromRole="Phones" ToRole="PropertyValueToPhones" />
+  </EntityType>
+  <EntityType Name="PropertyTypePhones">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PropertyValuePhones" Relationship="Device_PropertyModel.fk__PropertyTypePhones_Id" FromRole="PropertyTypePhones" ToRole="PropertyValuePhones" />
+  </EntityType>
+  <EntityType Name="PropertyValuePhones">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PTid" Type="Int64" />
+    <NavigationProperty Name="PropertyTypePhones" Relationship="Device_PropertyModel.fk__PropertyTypePhones_Id" FromRole="PropertyValuePhones" ToRole="PropertyTypePhones" />
+    <NavigationProperty Name="PropertyValueToPhones" Relationship="Device_PropertyModel.fk_VendorsToModels_PhonesId" FromRole="PropertyValuePhones" ToRole="PropertyValueToPhones" />
+  </EntityType>
+  <EntityType Name="PropertyValueToPhones">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PhoneId" Type="Int64" />
+    <Property Name="PVId" Type="Int64" />
+    <NavigationProperty Name="Phones" Relationship="Device_PropertyModel.fk_VendorsToModels_PhonessId" FromRole="PropertyValueToPhones" ToRole="Phones" />
+    <NavigationProperty Name="PropertyValuePhones" Relationship="Device_PropertyModel.fk_VendorsToModels_PhonesId" FromRole="PropertyValueToPhones" ToRole="PropertyValuePhones" />
+  </EntityType>
+  <Association Name="fk_VendorsToModels_PhonessId">
+    <End Type="Device_PropertyModel.Phones" Role="Phones" Multiplicity="0..1" />
+    <End Type="Device_PropertyModel.PropertyValueToPhones" Role="PropertyValueToPhones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phones">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PropertyValueToPhones">
+        <PropertyRef Name="PhoneId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk__PropertyTypePhones_Id">
+    <End Type="Device_PropertyModel.PropertyTypePhones" Role="PropertyTypePhones" Multiplicity="0..1" />
+    <End Type="Device_PropertyModel.PropertyValuePhones" Role="PropertyValuePhones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyTypePhones">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PropertyValuePhones">
+        <PropertyRef Name="PTid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_VendorsToModels_PhonesId">
+    <End Type="Device_PropertyModel.PropertyValuePhones" Role="PropertyValuePhones" Multiplicity="0..1" />
+    <End Type="Device_PropertyModel.PropertyValueToPhones" Role="PropertyValueToPhones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyValuePhones">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PropertyValueToPhones">
+        <PropertyRef Name="PVId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ListSitePhones">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="site" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsUsing" Type="Boolean" />
+    <Property Name="TotalResult" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastDeviceId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>
